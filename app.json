@@ -73,19 +73,19 @@
             "name": "mode",
             "values": [
               {
-                "id": "spiral-spot-mode",
+                "id": "CLEAN_SPOT",
                 "label": {
                   "en": "Spiral spot mode"
                 }
               },
               {
-                "id": "cell-by-cell-mode",
+                "id": "CLEAN_SB",
                 "label": {
                   "en": "Cell-by-cell mode"
                 }
               },
               {
-                "id": "zigzag-mode",
+                "id": "CLEAN_ZZ",
                 "label": {
                   "en": "Zigzag mode"
                 }
@@ -150,22 +150,11 @@
           "template": "add_devices"
         }
       ],
+      "discovery": "hombot",
       "id": "lg-hom-bot"
     }
   ],
   "discovery": {
-    "hom-bot-wifi": {
-      "type": "mac",
-      "mac": {
-        "manufacturer": [
-          [
-            0,
-            19,
-            239
-          ]
-        ]
-      }
-    },
     "hombot": {
       "type": "mac",
       "mac": {
@@ -174,6 +163,11 @@
             0,
             19,
             239
+          ],
+          [
+            84,
+            239,
+            68
           ]
         ]
       }
