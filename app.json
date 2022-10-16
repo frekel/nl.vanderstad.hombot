@@ -72,8 +72,11 @@
         "title": {
           "en": "mode"
         },
+        "titleFormatted": {
+          "en": "Set cleaning mode to [[mode]]"
+        },
         "hint": {
-          "en": "Set clean mode"
+          "en": "Set cleaning mode"
         },
         "args": [
           {
@@ -124,6 +127,9 @@
       {
         "title": {
           "en": "turbo"
+        },
+        "titleFormatted": {
+          "en": "Set turbo mode to [[turbo]]"
         },
         "hint": {
           "en": "Set turbo mode"
