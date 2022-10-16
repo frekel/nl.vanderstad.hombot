@@ -61,24 +61,94 @@
     "actions": [
       {
         "title": {
+          "en": "home"
+        },
+        "hint": {
+          "en": "Return to homestation"
+        },
+        "id": "home"
+      },
+      {
+        "title": {
+          "en": "mode"
+        },
+        "hint": {
+          "en": "Set clean mode"
+        },
+        "args": [
+          {
+            "type": "dropdown",
+            "name": "mode",
+            "values": [
+              {
+                "id": "spiral-spot-mode",
+                "label": {
+                  "en": "Spiral spot mode"
+                }
+              },
+              {
+                "id": "cell-by-cell-mode",
+                "label": {
+                  "en": "Cell-by-cell mode"
+                }
+              },
+              {
+                "id": "zigzag-mode",
+                "label": {
+                  "en": "Zigzag mode"
+                }
+              }
+            ]
+          }
+        ],
+        "id": "mode"
+      },
+      {
+        "title": {
           "en": "start"
         },
         "hint": {
           "en": "Start vacuuming"
         },
         "id": "start"
+      },
+      {
+        "title": {
+          "en": "stop"
+        },
+        "hint": {
+          "en": "Stop vacuuming"
+        },
+        "id": "stop"
+      },
+      {
+        "title": {
+          "en": "turbo"
+        },
+        "hint": {
+          "en": "Set turbo mode"
+        },
+        "args": [
+          {
+            "type": "checkbox",
+            "name": "turbo",
+            "title": {
+              "en": "Enabled"
+            }
+          }
+        ],
+        "id": "turbo"
       }
     ]
   },
   "drivers": [
     {
       "name": {
-        "en": "VR64702LVM"
+        "en": "LG Hom-bot"
       },
       "class": "vacuumcleaner",
       "capabilities": [
-        "vacuumcleaner_state",
-        "onoff"
+        "vacuumcleaner_state"
       ],
       "platforms": [
         "local"
@@ -87,14 +157,42 @@
         "lan"
       ],
       "images": {
-        "small": "/drivers/vr64702lvm/assets/images/small.png",
-        "large": "/drivers/vr64702lvm/assets/images/large.png",
-        "xlarge": "/drivers/vr64702lvm/assets/images/xlarge.png"
+        "small": "/drivers/lg-hom-bot/assets/images/small.png",
+        "large": "/drivers/lg-hom-bot/assets/images/large.png",
+        "xlarge": "/drivers/lg-hom-bot/assets/images/xlarge.png"
       },
-      "id": "vr64702lvm"
+      "pair": [
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          },
+          "options": {
+            "singular": false
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "lg-hom-bot"
     }
   ],
   "discovery": {
+    "hom-bot-wifi": {
+      "type": "mac",
+      "mac": {
+        "manufacturer": [
+          [
+            0,
+            19,
+            239
+          ]
+        ]
+      }
+    },
     "hombot": {
       "type": "mac",
       "mac": {
