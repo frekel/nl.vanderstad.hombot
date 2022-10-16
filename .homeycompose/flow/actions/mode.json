@@ -1,12 +1,10 @@
 {
+  "id": "mode",
   "title": {
-    "en": "mode"
+    "en": "Set cleaning mode"
   },
   "titleFormatted": {
     "en": "Set cleaning mode to [[mode]]"
-  },
-  "hint": {
-    "en": "Set cleaning mode"
   },
   "args": [
     {

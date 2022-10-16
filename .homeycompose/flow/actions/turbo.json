@@ -1,12 +1,10 @@
 {
+  "id": "turbo",
   "title": {
-    "en": "turbo"
+    "en": "Set turbo mode"
   },
   "titleFormatted": {
     "en": "Set turbo mode to [[turbo]]"
-  },
-  "hint": {
-    "en": "Set turbo mode"
   },
   "args": [
     {
