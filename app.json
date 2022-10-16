@@ -60,23 +60,12 @@
   "flow": {
     "actions": [
       {
+        "id": "mode",
         "title": {
-          "en": "home"
-        },
-        "hint": {
-          "en": "Return to homestation"
-        },
-        "id": "home"
-      },
-      {
-        "title": {
-          "en": "mode"
+          "en": "Set cleaning mode"
         },
         "titleFormatted": {
           "en": "Set cleaning mode to [[mode]]"
-        },
-        "hint": {
-          "en": "Set cleaning mode"
         },
         "args": [
           {
@@ -103,36 +92,15 @@
               }
             ]
           }
-        ],
-        "id": "mode"
+        ]
       },
       {
+        "id": "turbo",
         "title": {
-          "en": "start"
-        },
-        "hint": {
-          "en": "Start vacuuming"
-        },
-        "id": "start"
-      },
-      {
-        "title": {
-          "en": "stop"
-        },
-        "hint": {
-          "en": "Stop vacuuming"
-        },
-        "id": "stop"
-      },
-      {
-        "title": {
-          "en": "turbo"
+          "en": "Set turbo mode"
         },
         "titleFormatted": {
           "en": "Set turbo mode to [[turbo]]"
-        },
-        "hint": {
-          "en": "Set turbo mode"
         },
         "args": [
           {
@@ -142,8 +110,7 @@
               "en": "Enabled"
             }
           }
-        ],
-        "id": "turbo"
+        ]
       }
     ]
   },
