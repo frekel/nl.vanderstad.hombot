@@ -1,0 +1,59 @@
+{
+  "id": "nl.vanderstad.hombot",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local"
+  ],
+  "brandColor": "#a50034",
+  "name": {
+    "en": "LG Hombot (SDK3)"
+  },
+  "description": {
+    "en": "LG Hombot support for Homey (SDK3)"
+  },
+  "category": [
+    "appliances"
+  ],
+  "tags": {
+    "en": [
+      "LG",
+      "Hombot",
+      "HOM-BOT",
+      "VPARQUET"
+    ]
+  },
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "permissions": [],
+  "author": {
+    "name": "Frank van der Stad",
+    "email": "antispam@vanderstad.nl"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Chamid Media",
+        "email": "info@chamidmedia.nl"
+      }
+    ]
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "frekel"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/frekel/nl.vanderstad.hombot/issues"
+  },
+  "homeyCommunityTopicId": 1234,
+  "source": "https://github.com/frekel/nl.vanderstad.hombot",
+  "homepage": "https://github.com/frekel/nl.vanderstad.hombot",
+  "support": "mailto:antispam@vanderstad.nl"
+}
