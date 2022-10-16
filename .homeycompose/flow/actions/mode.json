@@ -12,19 +12,19 @@
       "name": "mode",
       "values": [
         {
-          "id": "spiral-spot-mode",
+          "id": "CLEAN_SPOT",
           "label": {
             "en": "Spiral spot mode"
           }
         },
         {
-          "id": "cell-by-cell-mode",
+          "id": "CLEAN_SB",
           "label": {
             "en": "Cell-by-cell mode"
           }
         },
         {
-          "id": "zigzag-mode",
+          "id": "CLEAN_ZZ",
           "label": {
             "en": "Zigzag mode"
           }
