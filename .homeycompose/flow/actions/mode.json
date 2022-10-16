@@ -1,0 +1,34 @@
+{
+  "title": {
+    "en": "mode"
+  },
+  "hint": {
+    "en": "Set clean mode"
+  },
+  "args": [
+    {
+      "type": "dropdown",
+      "name": "mode",
+      "values": [
+        {
+          "id": "spiral-spot-mode",
+          "label": {
+            "en": "Spiral spot mode"
+          }
+        },
+        {
+          "id": "cell-by-cell-mode",
+          "label": {
+            "en": "Cell-by-cell mode"
+          }
+        },
+        {
+          "id": "zigzag-mode",
+          "label": {
+            "en": "Zigzag mode"
+          }
+        }
+      ]
+    }
+  ]
+}

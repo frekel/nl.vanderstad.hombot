@@ -1,0 +1,15 @@
+{
+  "title": {
+    "en": "turbo"
+  },
+  "hint": {
+    "en": "Set turbo mode"
+  },
+  "args": [
+    {
+      "type": "checkbox",
+      "name": "turbo",
+      "title": { "en": "Enabled" }
+    }
+  ]
+}
