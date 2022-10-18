@@ -1,3 +1,14 @@
 {
-  "device_unavailable": "Vacuum is not connected to the WiFi"
+  "device_unavailable": "Vacuum is not connected to the WiFi",
+  "pair": {
+    "try_manual_pairing": "You can continue with the manual pairing.",
+    "intro": "Enter the details of your vacuum.",
+    "address": "IP address",
+    "port": "Port",
+    "default_value": "default value",
+    "connect": "Add device"
+  },
+  "no_vacuums_found": "No vacuums found: %s",
+  "no_devices_found": "No devices found",
+  "no_correct_status_from_vacuum": "No correct status from vacuum"
 }

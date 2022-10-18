@@ -1,97 +1,163 @@
 <html>
-<head>
-    <script type="text/javascript">
+    <head>
+        <script type="application/javascript">
 
-      Homey.emit('get_pairing_error', {})
-        .then(function (pairingError) {
-          $('#pairing-error').html(pairingError);
-        });
+          Homey.emit('get_pairing_error', {})
+            .then(function (pairingError) {
+              $('#pairing-error').html(pairingError);
+            });
 
+          function saveSettings() {
 
-      function submit() {
-        Homey.showLoadingOverlay();
-        console.log('Saving settings...');
-        let address = $('#address').val();
-        let port = $('#port').val();
+            $('#pairing-error').html('Processing: Start saving settings...');
 
-        if (address !== '') {
-          // Build data array
-          let data = {
-            address: address,
-            port: port
-          };
+            let address = $('#address').val();
+            let port = $('#port').val();
+            if (address !== '') {
+              let data = {
+                address: address,
+                port: port
+              };
 
-          console.log('Saving device data', data);
+              $('#pairing-error').html('Processing: Saving device data: address: ' + address + ' port:' + port) ;
 
-          // Continue to back-end, pass along data
-          Homey.emit('set_manual_device', data);
+              Homey
+                .emit('set_manual_device', data).then((result) => {
+                    $('#pairing-error').html('Processing: End saving settings...');
+                    Homey.createDevice(result)
+                      .then(function (result) {
+                        $('#pairing-error').html('Saved: device as' + result.name) ;
+                        Homey.done();
+                      })
+                      .catch(function (error) {
+                        Homey.alert(error);
+                      });
+                })
+                .catch(error => {
+                    $('#pairing-error').html("Error: " + error.message).show();
+                });
+            } else {
+              $('#homebot-error').html("Error: Invalid fields").show();
+            }
+          }
+        </script>
 
-        } else {
-          $('#homebot-error').html("&#10060; Invalid fields").show();
-          Homey.hideLoadingOverlay();
-        }
-      }
+        <style>
+            .form-group {
+                width: 100%;
+                display: block;
+                margin-bottom: 12px;
+            }
 
-    </script>
+            .form-group label {
+                display: block;
+            }
 
-    <style>
-        .form-group {
-            width: 100%;
-            display: block;
-            margin-bottom: 12px;
-        }
+            .form-group input {
+                width: 100%;
+                display: block;
+                margin-bottom: 12px;
+            }
 
-        .form-group label {
-            display: block;
-        }
+            .textbox {
+                border-style: hidden hidden solid hidden;
+            }
 
-        .form-group input {
-            width: 100%;
-            display: block;
-            margin-bottom: 12px;
-        }
+            .roundrect {
+                color: #716705;
+                border: 1px;
+                border-color: #877b0b;
+                border-style: solid;
+                border-radius: 4px;
+                background-color: khaki;
+                width: auto;
+                height: auto;
+                padding: 3px 4px 3px 4px;
+            }
 
-        .textbox {
-            border-style: hidden hidden solid hidden;
-        }
+            input {
+                font-size: 16px;
+            }
 
-        .button {
-            display: block;
-            width: 100%;
-        }
+            .btn {
+                display: inline-block;
+                border-radius: 4px;
+                transition: all .3s ease 0s;
+                margin-bottom: 0;
+                font-weight: 400;
+                text-align: center;
+                vertical-align: middle;
+                touch-action: manipulation;
+                cursor: pointer;
+                background-image: none;
+                border: 1px solid transparent;
+                white-space: nowrap;
+                padding: 6px 12px;
+                font-size: 100%;
+            }
 
-        .button:enabled {
-            background-color: #00c139 !important;
-            color: #fff;
-        }
+            .btn:not(:last-of-type) {
+                margin-bottom: .5rem;
+            }
 
-        .roundrect {
-            color: #716705;
-            border: 1px;
-            border-color: #877b0b;
-            border-style: solid;
-            border-radius: 4px;
-            background-color: khaki;
-            width: auto;
-            height: auto;
-            padding: 3px 4px 3px 4px;
-        }
-    </style>
-</head>
+            .btn-lg {
+                padding: 10px 16px;
+                font-size: 18px;
+                line-height: 1.33;
+            }
 
-<body>
-    <p class="roundrect"><font size="+1">&#129300;</font> <span id='pairing-error'></span>.</p>
-    <p>
-        <span data-i18n="pair.try_manual_pairing">You can continue with the manual pairing.</span><br/>
-        <span data-i18n="pair.intro">Enter the details of your vacuum.</span>
-    </p>
-    <form class="form-group" onsubmit="submit()">
-        <label for="address" data-i18n="pair.address">IP address</label>
-        <input type="text" class="textbox" id="address" pattern="\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b" inputmode="numeric" required>
-        <label for="port"><span data-i18n="pair.port">Port</span> (<span data-i18n="pair.default_value">default value</span>: 6260)</label>
-        <input type="text" class="textbox" id="port" pattern="\b\d{1,5}\b" inputmode="numeric" value="6260" required>
-        <button type="submit" class="button" data-i18n="pair.connect">Connect</button>
-    </form>
-    <p id="homebot-error" style="color: #ff3300;" hidden></p>
-</body>
+            .btn-block {
+                display: block;
+            }
+
+            .btn-default {
+                color: #555;
+                background-color: #e7e7e7;
+                border: none;
+            }
+
+            .btn-success {
+                color: #fff;
+                background-color: #2dc225;
+                border-color: #42b03d;
+            }
+
+            .btn-primary {
+                color: #fff;
+                background-color: #0090ca;
+                border-color: #007eb1;
+            }
+
+            .form-control {
+                display: block;
+                font-size: 16px;
+                line-height: 1.428571429;
+                color: #555;
+                height: 34px;
+                padding: 6px 12px;
+                background-color: #fff;
+                background-image: none;
+                border: 1px solid #ccc;
+                border-radius: 2px;
+                box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+                transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+            }
+        </style>
+    </head>
+
+    <body>
+        <p class="roundrect"><span id='pairing-error'></span>.</p>
+        <p>
+            <span data-i18n="pair.try_manual_pairing">You can continue with the manual pairing.</span><br/>
+            <span data-i18n="pair.intro">Enter the details of your vacuum.</span>
+        </p>
+        <form class="form-group">
+            <label for="address" data-i18n="pair.address">IP address</label>
+            <input type="text" class="textbox" id="address" pattern="\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b" inputmode="decimal" required value="192.168.1.255">
+            <label for="port"><span data-i18n="pair.port">Port</span> (<span data-i18n="pair.default_value">default value</span>: 6260)</label>
+            <input type="text" class="textbox" id="port" pattern="\b\d{1,5}\b" inputmode="numeric" value="6260" required>
+            <a class="btn btn-success btn-block btn-lg" id="saveButton" data-i18n="pair.connect" onclick="saveSettings()">Create device</a>
+        </form>
+        <p id="homebot-error" style="color: #ff3300;" hidden></p>
+    </body>
 </html>

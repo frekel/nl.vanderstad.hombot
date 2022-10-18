@@ -1,0 +1,11 @@
+{
+  "device_unavailable": "Stofzuiger is niet verbonden met de WiFi",
+  "pair": {
+    "try_manual_pairing": "Je kunt handmatig een stofzuiger toevoegen.",
+    "intro": "Voer de gegevens van je stofzuiger in.",
+    "address": "IP adres",
+    "port": "Port",
+    "default_value": "standaard waarde",
+    "connect": "Voeg toe"
+  }
+}

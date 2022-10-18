@@ -23,6 +23,7 @@ The following  card are enabled in flows:
 - [ACTION] Start spot cleaning. (vacuum capability)
 - [ACTION] Set clean mode (zigzag, spiral spot, cell by cell) (app specific)
 - [ACTION] Set turbo on/off (app specific)
+- [ACTION] Set repeat on/off (app specific)
 
 - [CONDITION] Is (not) cleaning
 - [CONDITION] Is (not) spot_cleaning

@@ -1,0 +1,94 @@
+{
+  "actions": [
+    {
+      "id": "set-cleaning-mode",
+      "title": {
+        "en": "Set cleaning mode"
+      },
+      "titleFormatted": "Set cleaning mode to [[mode]]",
+      "hint": {
+        "en": "Set cleaning mode to [[mode]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "mode",
+          "values": [
+            {
+              "id": "CLEAN_SB",
+              "label": {
+                "en": "Cell-by-cell mode"
+              }
+            },
+            {
+              "id": "CLEAN_ZZ",
+              "label": {
+                "en": "Zigzag mode"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "set-repeat-mode",
+      "title": {
+        "en": "Set repeat mode"
+      },
+      "titleFormatted": "Set repeat mode to [[repeat]]",
+      "hint": {
+        "en": "Set repeat mode to [[repeat]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "repeat",
+          "values": [
+            {
+              "id": "true",
+              "label": {
+                "en": "Enabled"
+              }
+            },
+            {
+              "id": "false",
+              "label": {
+                "en": "Disabled"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "set-turbo-mode",
+      "title": {
+        "en": "Set turbo mode"
+      },
+      "titleFormatted": "Set turbo mode to [[turbo]]",
+      "hint": {
+        "en": "Set turbo mode to [[turbo]]"
+      },
+      "args": [
+        {
+          "type": "dropdown",
+          "name": "turbo",
+          "values": [
+            {
+              "id": "true",
+              "label": {
+                "en": "Enabled"
+              }
+            },
+            {
+              "id": "false",
+              "label": {
+                "en": "Disabled"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

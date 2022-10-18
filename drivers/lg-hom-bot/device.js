@@ -4,15 +4,12 @@ const { Device } = require('homey');
 
 class HomBotDevice extends Device {
 
-  /**
-   * onInit is called when the device is initialized.
-   */
   async onInit() {
     this.log('HomBotDevice has been initialized');
 
     this.registerCapabilityListener('vacuumcleaner_state', async (value) => {
-      this.log('Running the card: state with value=%s and options=%s', value);
-      let command = 'unknown';
+      this.log('[onInit] Running the card: state with value=%s and options=%s', value);
+      let command = null;
       switch (value) {
         case 'cleaning':
           command = '%7b%22COMMAND%22:%22CLEAN_START%22%7d';
@@ -24,21 +21,35 @@ class HomBotDevice extends Device {
           command = '%7b%22COMMAND%22:%22PAUSE%22%7d';
           break;
         case 'spot_cleaning':
-          command = 'unsupported';
+          command = '%7b%22COMMAND%22:%22CLEAN_START%22%7d';
           break;
         default:
-          this.log('Found an unsupported action');
+          this.log('[onInit] Found an unsupported action: ', value);
       }
 
-      this.log('Execute the command: %s', command);
+      this.log('[onInit] Execute the command: %s', command);
+      if (command) {
+        this.homey.app.sendCommand(command, this.getData());
+      }
     });
 
-    // this.setUnavailable(this.homey.__('device_unavailable')).catch(this.error);
-
-    // this.setAvailable().catch(this.error);
-
     // Here we need to find out if the vacuum is changing state.
-    // await this.setCapabilityValue('vacuumcleaner_state', 'stopped').catch(this.error);
+    this.homey.app.getExtraData(this.getData())
+      .then((data) => {
+        this.log('[onInit] Getting data: %s ', data);
+        try {
+          this.setAvailable();
+          const { status } = data;
+          this.setCapabilityValue('vacuumcleaner_state', status).catch(this.error);
+        } catch (error) {
+          this.log('[onInit] Setting setCapabilityValue failed for status: %s ', data.status, error);
+          this.setUnavailable(this.homey.__('device_unavailable')).catch(this.error);
+        }
+      }).catch((err) => {
+        // we can not possibly have completed the command here, as it ended up in the catch
+        this.log('[onInit] Getting error when trying to se tthe state: %s ', err);
+        this.setUnavailable(this.homey.__('device_unavailable')).catch(this.error);
+      });
   }
 
   /**
