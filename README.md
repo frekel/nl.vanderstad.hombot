@@ -32,7 +32,7 @@ The following  card are enabled in flows:
 - [CONDITION] Is (not) stopped
 
 # Changelog
-**Version 0.0.1:**
+**Version 0.9.8:**
 - First release
 - Refactored LG Hombot from Chamid Media to SDK 3
 
