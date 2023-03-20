@@ -1,5 +1,9 @@
 # LG Hombot support for Homey (SDK3)
 
+Control your LG HomBot with Homey. 
+
+***
+
 The LG Hombot/VParquet vacuum cleaner does NOT have network-capabilities by default. However, since it has a USB port, you can upgrade the firmware, load custom firmware and equip it with a Wi-Fi dongle. How to do this is explained here:
 - Dutch: http://www.domotica.center/robotstofzuiger-lg-hombot-vparquet/
 - German: http://www.roboter-forum.com/showthread.php?10009-LG-Hombot-3-0-(VR6260-VR6270-VR6340)-WLAN-Steuerung-per-Weboberfl%E4che

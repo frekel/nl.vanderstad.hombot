@@ -1,6 +1,6 @@
 {
   "id": "nl.vanderstad.hombot",
-  "version": "1.0.0",
+  "version": "0.9.8",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
@@ -52,8 +52,8 @@
   "bugs": {
     "url": "https://github.com/frekel/nl.vanderstad.hombot/issues"
   },
-  "homeyCommunityTopicId": 1234,
+  "homeyCommunityTopicId": 78092,
   "source": "https://github.com/frekel/nl.vanderstad.hombot",
   "homepage": "https://github.com/frekel/nl.vanderstad.hombot",
-  "support": "mailto:antispam@vanderstad.nl"
+  "support": "https://community.homey.app/t/app-pro-lg-hombot/78092"
 }
