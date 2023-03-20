@@ -1,6 +1,6 @@
 {
   "name": "nl.vanderstad.hombot",
-  "version": "0.98",
+  "version": "0.9.8",
   "main": "app.js",
   "scripts": {
     "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
