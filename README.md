@@ -1,4 +1,4 @@
-# LG Hombot support for Homey (SDK3)
+# LG Hombot support for Homey
 
 Control your LG HomBot with Homey. 
 

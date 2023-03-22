@@ -1,5 +1,5 @@
 {
-  "name": "nl.vanderstad.hombot",
+  "name": "com.lg.hombot",
   "version": "0.9.8",
   "main": "app.js",
   "scripts": {

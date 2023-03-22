@@ -1,5 +1,5 @@
 {
-  "id": "nl.vanderstad.hombot",
+  "id": "com.lg.hombot",
   "version": "0.9.8",
   "compatibility": ">=5.0.0",
   "sdk": 3,
@@ -8,10 +8,10 @@
   ],
   "brandColor": "#a50034",
   "name": {
-    "en": "LG Hombot (SDK3)"
+    "en": "LG Hombot"
   },
   "description": {
-    "en": "LG Hombot support for Homey (SDK3)"
+    "en": "LG Hombot support for Homey"
   },
   "category": [
     "appliances"
